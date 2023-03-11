@@ -268,7 +268,7 @@ Use removeArtist to do the following:
 function removeArtist(array, number) {
   let newArray = [...array];
   for (let i = 0; i < array.length; i ++){
-    if (i == number){
+    if (i === number){
       newArray.splice(i, 1);
     }
   }
@@ -295,7 +295,7 @@ Use addArtist to do the following:
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
 function addArtist(array, name, years, genre, nationality, bio) {
-  updatedArtists = [...array];
+  let updatedArtists = [...array];
   updatedArtists.push({name, years, genre, nationality, bio});
   return updatedArtists;
 }
@@ -311,9 +311,16 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(array) {
+  let lotsOfPaintings = [];
+  for (let i = 0; i < array.length; i ++){
+    if (array[i].paintings > 100){
+      lotsOfPaintings.push(array[i].name);
+    }
+  }
+  return lotsOfPaintings;
 }
+console.log('Task 7:', lotsOfArt(artists));
 
 
 
